@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Todo Testing App</title>
+  <style>
+    body { font-family: Arial; max-width: 720px; margin: 40px auto; }
+    input, button { padding: 10px; margin: 6px 0; }
+    .row { display: flex; gap: 8px; align-items: center; }
+    .todo { display: flex; justify-content: space-between; padding: 10px; border: 1px solid #ddd; margin: 6px 0; }
+    .done { text-decoration: line-through; opacity: 0.7; }
+    small { color: #666; }
+  </style>
+</head>
+<body>
+  <h1>Todo Testing App</h1>
+
+  <h2>Auth</h2>
+  <div class="row">
+    <input id="email" placeholder="email" />
+    <input id="password" placeholder="password (min 6)" type="password" />
+  </div>
+  <div class="row">
+    <button id="btnRegister">Register</button>
+    <button id="btnLogin">Login</button>
+    <button id="btnLogout">Logout</button>
+  </div>
+  <p><small id="authStatus">Not logged in</small></p>
+
+  <hr/>
+
+  <h2>Todos</h2>
+  <div class="row">
+    <input id="newTitle" placeholder="New todo title" style="flex:1" />
+    <button id="btnAdd">Add</button>
+  </div>
+
+  <div class="row">
+    <input id="search" placeholder="Search..." style="flex:1" />
+    <button id="btnSearch">Search</button>
+    <button id="btnRefresh">Refresh</button>
+  </div>
+
+  <div id="todos"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
