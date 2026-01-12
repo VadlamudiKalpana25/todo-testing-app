@@ -9,14 +9,16 @@ from sqlalchemy.orm import Session
 
 from fastapi.security import OAuth2PasswordRequestForm
 
+from backend.models import User, Todo
+from backend.schemas import UserCreate, TokenResponse, TodoCreate, TodoUpdate, TodoOut
+from backend.auth import hash_password, verify_password, create_access_token, decode_token
+from backend.db import Base, engine, SessionLocal
+
 from sqlalchemy.orm import Session
 from jose import JWTError
 from typing import List
 
-from db import Base, engine, SessionLocal
-from models import User, Todo
-from schemas import UserCreate, TokenResponse, TodoCreate, TodoUpdate, TodoOut
-from auth import hash_password, verify_password, create_access_token, decode_token
+
 
 # CREATE APP  (THIS IS WHAT UVICORN NEEDS)
 app = FastAPI(title="Todo Testing App")
