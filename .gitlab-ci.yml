@@ -1,0 +1,16 @@
+stages:
+  - build
+  - unit_tests
+
+build_job:
+  stage: build
+  image: python:3.11
+  script:
+    - pip install -r backend/requirements.txt
+
+unit_tests_job:
+  stage: unit_tests
+  image: python:3.11
+  script:
+    - pip install -r backend/requirements.txt
+    - pytest tests/unit
